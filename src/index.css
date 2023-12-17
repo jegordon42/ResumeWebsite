@@ -70,5 +70,5 @@ a:hover {
 .fly {
   margin-left: 11rem !important;
   margin-top: -11rem !important;
-  transition: margin 3000ms;
+  transition: margin 3000ms !important;
 }

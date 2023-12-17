@@ -40,6 +40,7 @@ export function Project(props) {
         height:'100%',
         width: '100%',
         marginTop: active ? '-0.5rem' : '',
+        transition: 'margin 200ms',
     }
 
     const onClick = () => {

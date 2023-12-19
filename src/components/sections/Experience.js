@@ -12,7 +12,7 @@ export function Experience(props) {
     const timelineStyle = {
         display: 'grid',
         columnGap: '2rem',
-        gridTemplateColumns: '12rem 1rem auto'
+        gridTemplateColumns: props.isMobile ? 'auto 1rem auto' : '12rem 1rem auto'
     }
     
     const lineStyle = {
@@ -38,9 +38,6 @@ export function Experience(props) {
 
     return (
         <div style={sectionStyle} ref={props.sectionRef}>
-            {/* <h3 style={{paddingBottom:'5rem'}}>
-                Experience
-            </h3> */}
             <div style={timelineStyle}>
                 <TimelineTop/>
                 {constants.EXPERIENCE.experiences.map((experience) => 

@@ -168,7 +168,11 @@ export const PROJECTS = {
             align: 'left',
             imageStyle: {
                 height: "11rem",
-                width: "13rem"
+                width: "19rem"
+            },
+            mobileImageStyle: {
+                height: "8rem",
+                width: "10rem"
             },
             description: [
                 {
@@ -186,6 +190,11 @@ export const PROJECTS = {
             imageStyle: {
                 height: "8rem",
                 width: "8rem"
+            },
+            mobileImageStyle: {
+                height: "7rem",
+                width: "6rem",
+                marginTop: '1rem'
             },
             align: 'right',
             description: [
@@ -205,7 +214,11 @@ export const PROJECTS = {
             image: JoeRocket,
             imageStyle: {
                 height: "12rem",
-                width: "33rem"
+                width: "19rem"
+            },
+            mobileImageStyle: {
+                height: "12rem",
+                width: "14rem"
             },
             align: 'left',
             link: "https://joelinks.net/",
@@ -228,7 +241,12 @@ export const PROJECTS = {
             image: Budget,
             imageStyle: {
                 height: "10rem",
-                width: "33rem"
+                width: "19rem"
+            },
+            mobileImageStyle: {
+                height: "8rem",
+                width: "10rem",
+                marginTop: "1rem",
             },
             align: 'right',
             description: [
@@ -256,10 +274,16 @@ export const PROJECTS = {
             image: Camera,
             imageStyle: {
                 height: "8rem",
-                width: "16rem",
-                marginTop: "2rem",
-                marginBottom: "3rem",
-                marginRight: "2rem"
+                width: "12rem",
+                marginTop: "1rem",
+                marginBottom: "1rem",
+                marginLeft: "1rem",
+                marginRight: "3rem"
+            },
+            mobileImageStyle: {
+                height: "8rem",
+                width: "10rem",
+                marginTop: "1rem"
             },
             align: 'left',
             description: [

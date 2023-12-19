@@ -32,6 +32,10 @@ export function Project(props) {
         transition: 'margin 200ms',
         transform: 'rotate(-45deg)',
     }
+    const mobileImageContainerStyle = {
+        display:'flex',
+        justifyContent: 'center',
+    }
     const imageContainerStyle = {
         marginLeft: props.project.align == "right" ? '1rem' : '', 
         marginRight: props.project.align == "left" ? '1rem' : '', 
@@ -46,12 +50,16 @@ export function Project(props) {
 
     const onClick = () => {
         if(props.project.link){
-            var rocket = document.getElementById("JoeLinks");
-            rocket.classList.add("fly");
-            setTimeout(()=>{
+            if(props.isMobile){
                 window.open(props.project.link);
-                rocket.classList.remove("fly");
-            }, 2500);
+            }else{
+                var rocket = document.getElementById("JoeLinks");
+                rocket.classList.add("fly");
+                setTimeout(()=>{
+                    window.open(props.project.link);
+                    rocket.classList.remove("fly");
+                }, 2500);
+            }
         }
     }
 
@@ -62,12 +70,12 @@ export function Project(props) {
             onMouseLeave={() => setHovered(false)}
             onClick={() => onClick()}
         >
-            {props.project.align == "left" &&
+            {!props.isMobile && props.project.align == "left" &&
                 <div style={imageContainerStyle} >
                     <img src={props.project.image} style={imageStyle} id={props.project.name}/>
                 </div>
             }
-            <div>
+            <div style={{width: '100%'}}>
                 <h3 style={nameStyle}>
                     {props.project.name}
                     <AiOutlineArrowRight style={arrowStyle} size={16}/>
@@ -93,10 +101,15 @@ export function Project(props) {
                         <Chip text={skill}/>
                     )}
                 </div>
+                {props.isMobile &&
+                    <div style={mobileImageContainerStyle}>
+                        <img src={props.project.image} style={props.project.mobileImageStyle} id={props.project.name}/>
+                    </div>
+                }
             </div>
-            {props.project.align == "right" &&
+            {!props.isMobile && props.project.align == "right" &&
                 <div style={imageContainerStyle}>
-                    <img src={props.project.image} style={imageStyle}/>
+                    <img src={props.project.image} style={imageStyle} id={props.project.name}/>
                 </div>
             }
         </div>

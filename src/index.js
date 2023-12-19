@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import * as constants from './constants'
+import { themes } from './themes'
+import {Provider} from 'react-redux'
+import Store from './store/Store'
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={Store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
@@ -20,6 +24,6 @@ reportWebVitals();
 
 rootElement.onmousemove = function(e) {
   const background = 'radial-gradient(600px at ' + e.pageX + 'px ' + e.pageY + 'px,' +
-  constants.colors.backgroundGradient + ', transparent 80%)';
+  themes.blue.colors.backgroundGradient + ', transparent 80%)';
   rootElement.style.setProperty('background', background);
 }

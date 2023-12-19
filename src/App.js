@@ -4,7 +4,6 @@ import { About } from './components/sections/About';
 import { Experience } from './components/sections/Experience';
 import { Projects } from './components/sections/Projects';
 import { Skills } from './components/sections/Skills';
-import 'react-tooltip/dist/react-tooltip.css'
 
 const appStyle = {
   height: '100%',
@@ -37,11 +36,11 @@ function App() {
 
   useEffect(()=>{
     window.onscroll = (e)=> {
-      if(sectionRefs.experience && sectionRefs.experience.current.getBoundingClientRect().top > 100){
+      if(sectionRefs.experience.current && sectionRefs.experience.current.getBoundingClientRect().top > 100){
         setActiveSection('ABOUT');
-      }else if(sectionRefs.projects && sectionRefs.projects.current.getBoundingClientRect().top > 100){
+      }else if(sectionRefs.projects.current && sectionRefs.projects.current.getBoundingClientRect().top > 100){
         setActiveSection('EXPERIENCE');
-      }else if(sectionRefs.skills && sectionRefs.skills.current.getBoundingClientRect().bottom > window.innerHeight + 5){
+      }else if(sectionRefs.skills.current && sectionRefs.skills.current.getBoundingClientRect().bottom > window.innerHeight + 5){
         setActiveSection('PROJECTS');
       }else{
         setActiveSection('SKILLS');

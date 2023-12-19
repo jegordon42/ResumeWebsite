@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import * as constants from '../../constants';
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export function Button(props) {
+    const theme = useSelector(state => state.theme);
     const [hovered, setHovered] = useState(false);
 
     const buttonStyle = {
-        color: constants.colors.secondary,
+        color: theme.colors.secondary,
         fontSize: '16px',
         fontWeight: '600',
         cursor:'pointer',
@@ -15,7 +17,7 @@ export function Button(props) {
         ...props.style
     };
     const textStyle = { 
-        borderBottom: hovered ? '1px solid ' + constants.colors.chip : '',
+        borderBottom: hovered ? '1px solid ' + theme.colors.chip : '',
     }
     const arrowStyle = {
         marginTop:'0.1rem',

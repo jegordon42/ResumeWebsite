@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import * as constants from '../../constants';
+import { useSelector } from 'react-redux';
 import { Chip } from './Chip';
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export function Project(props) {
+    const theme = useSelector(state => state.theme);
     const [hovered, setHovered] = useState(false);
     const active = props.project.link && hovered;
 
@@ -12,7 +13,7 @@ export function Project(props) {
         display:'flex',
         alignItems:'center',
         borderRadius:'1rem',
-        backgroundColor: active ? constants.colors.backgroundGradient : '',
+        backgroundColor: active ? theme.colors.backgroundGradient : '',
         cursor: props.project.link ? 'pointer' : ''
     }
     const chipsStyle = {
@@ -22,7 +23,7 @@ export function Project(props) {
     }
     const nameStyle = {
         margin:0,
-        color: active ? constants.colors.chip : constants.colors.secondary,
+        color: active ? theme.colors.chip : theme.colors.secondary,
     }
     const arrowStyle = {
         display: props.project.link ? '' : 'none',

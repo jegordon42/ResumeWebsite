@@ -4,15 +4,6 @@ import Camera from './static/Camera.png'
 import JoeRocket from './static/JoeRocket.png'
 import Mirror from './static/Mirror.png'
 
-export const colors = {
-    primary : '#8ea0ba',
-    secondary: '#dfe4f0',
-    backgroundGradient: '#131f41',
-    timeline: '#2b3554',
-    timelineActive: '#555d76',
-    chip: '#4cbdc0',
-}
-
 export const NAME = 'Joseph Gordon';
 export const OCCUPATION = 'Full-Stack Software Engineer';
 export const OCCUPATION_DESCRIPTION = 'Welcome! I\'m passionate about transforming ' +

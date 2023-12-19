@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import * as constants from '../../constants';
+import { useSelector } from 'react-redux';
 import { Chip } from './Chip';
 import { BsTriangleFill } from "react-icons/bs";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export function TimelineEntry(props) {
+    const theme = useSelector(state => state.theme);
     const [hovered, setHovered] = useState(false);
-    const color = hovered ? constants.colors.timelineActive : constants.colors.timeline;
+    const color = hovered ? theme.colors.timelineActive : theme.colors.timeline;
 
     const lineStyle = {
-        borderLeft: '3px solid ' + constants.colors.primary
+        borderLeft: '3px solid ' + theme.colors.primary
     };
     const dateStyle = {
         paddingTop: '1.75rem'
@@ -48,7 +49,7 @@ export function TimelineEntry(props) {
     }
     const nameStyle = {
         margin:0,
-        color: hovered ? constants.colors.chip : constants.colors.secondary,
+        color: hovered ? theme.colors.chip : theme.colors.secondary,
     }
     const arrowStyle = {
         marginBottom: hovered ? '0.1rem' : '-0.2rem',
@@ -57,7 +58,7 @@ export function TimelineEntry(props) {
         transform: 'rotate(-45deg)',
     }
     const iconStyle = {
-        color: hovered ? constants.colors.chip : constants.colors.secondary,
+        color: hovered ? theme.colors.chip : theme.colors.secondary,
     }
 
     return (

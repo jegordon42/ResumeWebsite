@@ -37,8 +37,8 @@ export function Project(props) {
         justifyContent: 'center',
     }
     const imageContainerStyle = {
-        marginLeft: props.project.align == "right" ? '1rem' : '', 
-        marginRight: props.project.align == "left" ? '1rem' : '', 
+        marginLeft: props.project.align === "right" ? '1rem' : '', 
+        marginRight: props.project.align === "left" ? '1rem' : '', 
         ...props.project.imageStyle
     }
     const imageStyle = {
@@ -70,9 +70,9 @@ export function Project(props) {
             onMouseLeave={() => setHovered(false)}
             onClick={() => onClick()}
         >
-            {!props.isMobile && props.project.align == "left" &&
+            {!props.isMobile && props.project.align === "left" &&
                 <div style={imageContainerStyle} >
-                    <img src={props.project.image} style={imageStyle} id={props.project.name}/>
+                    <img src={props.project.image} alt={props.project.name} style={imageStyle} id={props.project.name}/>
                 </div>
             }
             <div style={{width: '100%'}}>
@@ -93,6 +93,8 @@ export function Project(props) {
                                         {section.text}
                                     </a>
                                 );
+                            default:
+                                return "Invalid Type";
                         }
                     })}
                 </p>
@@ -103,13 +105,13 @@ export function Project(props) {
                 </div>
                 {props.isMobile &&
                     <div style={mobileImageContainerStyle}>
-                        <img src={props.project.image} style={props.project.mobileImageStyle} id={props.project.name}/>
+                        <img src={props.project.image} alt={props.project.name} style={props.project.mobileImageStyle} id={props.project.name}/>
                     </div>
                 }
             </div>
             {!props.isMobile && props.project.align == "right" &&
                 <div style={imageContainerStyle}>
-                    <img src={props.project.image} style={imageStyle} id={props.project.name}/>
+                    <img src={props.project.image} alt={props.project.name} style={imageStyle} id={props.project.name}/>
                 </div>
             }
         </div>

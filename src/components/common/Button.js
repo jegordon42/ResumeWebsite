@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import * as constants from '../../constants';
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 export function Button(props) {

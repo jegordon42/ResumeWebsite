@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import * as constants from '../../constants';
 
 export function NavOption(props) {
     const theme = useSelector(state => state.theme);
     const [hovered, setHovered] = useState(false);
-    const active = hovered || props.activeSection == props.name;
+    const active = hovered || props.activeSection === props.name;
     const color = active ? theme.colors.secondary : theme.colors.primary;
     const lineWidth = active ? '70px' : '35px';
 
